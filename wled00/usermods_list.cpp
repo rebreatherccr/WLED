@@ -10,6 +10,12 @@
  * \/ \/ \/
  */
 //#include "usermod_v2_example.h"
+
+#ifdef USERMOD_V2_MIDI
+#include "../usermods/midi/usermod_v2_midi.h"
+#include "../usermods/midi/usermod_v2_midi.cpp"
+#endif
+
 #ifdef USERMOD_DALLASTEMPERATURE
 #include "../usermods/Temperature/usermod_temperature.h"
 #endif
@@ -58,7 +64,11 @@ void registerUsermods()
    * \/ \/ \/
    */
   //usermods.add(new MyExampleUsermod());
-  
+
+#ifdef USERMOD_V2_MIDI
+  usermods.add(new UsermodV2Midi());
+#endif
+
   #ifdef USERMOD_DALLASTEMPERATURE
   usermods.add(new UsermodTemperature());
   #endif

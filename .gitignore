@@ -14,3 +14,7 @@
 .clang-format
 node_modules
 .idea
+
+.stfolder
+*.sublime-project
+*.sublime-workspace
